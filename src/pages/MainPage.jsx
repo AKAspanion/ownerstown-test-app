@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Icon from "@mdi/react";
 import {
@@ -12,7 +12,6 @@ import {
 import { Button, Calling, Hero } from "../components";
 import { useHeroFetch } from "../hooks";
 import "./MainPage.css";
-import { useEffect } from "react";
 
 function MainPage() {
   const time = new Date().toTimeString().slice(0, 5);
@@ -24,12 +23,8 @@ function MainPage() {
   const { loading, hero, error } = useHeroFetch(code);
 
   useEffect(() => {
-    setMesssage(error);
-  }, [error]);
-
-  useEffect(() => {
-    setMesssage(hero);
-  }, [hero]);
+    setMesssage(hero || error);
+  }, [error, hero]);
 
   const onClick = (e, value) => {
     if (isNaN(value)) {
@@ -45,7 +40,6 @@ function MainPage() {
           if (loading) return;
           setCode("");
           setInput("");
-          setMesssage("Use a code to call for a superhero");
           break;
         case "back":
           if (input) setInput(input.slice(0, input.length - 1));
@@ -100,7 +94,6 @@ function MainPage() {
             <div className="feature-phone__help-right">Clear</div>
           </div>
         </div>
-        <div className="feature-phone__name">CZ&nbsp;INC.</div>
         <div className="feature-phone__grill" />
       </div>
 

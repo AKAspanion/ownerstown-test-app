@@ -13,16 +13,19 @@ export default function useHeroFetch(code) {
     setLoading(true);
     (async function () {
       try {
-        if (!code) throw new Error("No code found");
+        if (!code)
+          throw new Error("Use the secret code to call for a superhero");
         // for showing animation
-        await fetchTimeout(2000);
+        await fetchTimeout(1000);
 
         const resp = await fetchHero(code);
-        const {
-          data: { heroes },
-        } = await resp.json();
+        const data = await resp.json();
 
-        const hero = heroes[0];
+        if (!data.success) {
+          throw new Error(data.error);
+        }
+
+        const hero = data.data.heroes[0];
 
         if (hero) {
           setHero(hero);
@@ -30,7 +33,7 @@ export default function useHeroFetch(code) {
           setError("No hero found");
         }
       } catch (err) {
-        setError("Use a code to call for a superhero");
+        setError(err.message);
       } finally {
         setLoading(false);
       }
