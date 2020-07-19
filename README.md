@@ -1,2 +1,2 @@
-# ownerstown-test-app
-ownerstown-test-api
+# ownerstown-test
+Frontend built with Reactjs.

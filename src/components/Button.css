@@ -1,0 +1,49 @@
+.keypad__key {
+  margin: 2px;
+  width: 52px;
+  height: 24px;
+  display: flex;
+  cursor: pointer;
+  color: #cccccc;
+  font-size: 12px;
+  user-select: none;
+  border-radius: 16px;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, box-shadow;
+  box-shadow: 0px 0px 1px #141817;
+  background: linear-gradient(145deg, #36413e, #262d2c);
+}
+
+.keypad__key.keypad__key--center {
+  height: 52px;
+  border-radius: 20px;
+  position: relative;
+  pointer-events: none;
+}
+
+.keypad__key-large {
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  border-radius: 14px;
+  box-shadow: inset 1px 1px 3px #141414,inset -1px -1px 3px #141414;
+  background: #2d3634;
+}
+
+.keypad__key:hover,
+.keypad__key:focus {
+  outline: none;
+  box-shadow: none;
+  color: #c2c2c2;
+  background: linear-gradient(145deg, #262d2c, #36413e);
+}
+
+.keypad__key-value {
+  width: 12px;
+  font-size: 14px;
+}
+.keypad__key-binding {
+  width: 24px;
+  font-size: 10px;
+}
