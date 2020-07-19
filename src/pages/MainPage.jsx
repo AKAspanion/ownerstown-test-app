@@ -10,7 +10,7 @@ import {
 } from "@mdi/js";
 
 import { Button, Calling, Hero } from "../components";
-import { useHeroFetch } from "../hooks";
+import { useHeroFetch, useKeyboard } from "../hooks";
 import "./MainPage.css";
 
 function MainPage() {
@@ -21,10 +21,28 @@ function MainPage() {
   const [code, setCode] = useState("");
 
   const { loading, hero, error } = useHeroFetch(code);
+  const event = useKeyboard();
 
   useEffect(() => {
     setMesssage(hero || error);
   }, [error, hero]);
+
+  useEffect(() => {
+    if (event) {
+      const { key } = event;
+      if (key === "Backspace") {
+        onClick(event, "back");
+      } else if (key === "Escape") {
+        onClick(event, "clear");
+      } else if (key === " ") {
+        onClick(event, "#");
+      } else if (key === "Enter") {
+        onClick(event, "✱");
+      } else {
+        onClick(event, key);
+      }
+    }
+  }, [event]);
 
   const onClick = (e, value) => {
     if (isNaN(value)) {
