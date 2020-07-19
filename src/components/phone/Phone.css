@@ -90,16 +90,6 @@
   font-weight: 400;
 }
 
-input {
-  border: none;
-  outline: none;
-  width: inherit;
-  font-size: 24px;
-  text-align: right;
-  background: #ffffff;
-  font-family: "VT323", sans-serif;
-}
-
 .feature-phone__help {
   width: 100%;
   display: flex;
@@ -174,13 +164,4 @@ input {
   border-radius: 3px;
   background: linear-gradient(145deg, #262d2c, #2d3634);
   box-shadow: 0px 0px 1px #141817, inset 0px 0px 0.5px #000000;
-}
-
-.send-btn .asterix {
-  font-size: 11px;
-  margin-bottom: 2px;
-}
-
-.send-btn .keypad__key-binding {
-  padding-top: 2px;
 }

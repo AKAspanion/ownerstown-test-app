@@ -29,7 +29,7 @@ function Hero({ name }) {
     return false;
   }
   return (
-    <div className="hero-image">
+    <div>
       <img
         alt={name}
         width="80"

@@ -1,0 +1,18 @@
+input {
+  border: none;
+  outline: none;
+  width: inherit;
+  font-size: 24px;
+  text-align: right;
+  background: #ffffff;
+  font-family: "VT323", sans-serif;
+}
+
+.send-btn .asterix {
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+
+.send-btn .keypad__key-binding {
+  padding-top: 2px;
+}

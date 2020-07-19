@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 
 import Icon from "@mdi/react";
 import {
@@ -9,13 +9,11 @@ import {
   mdiKeyboardSpace,
 } from "@mdi/js";
 
-import { Button, Calling, Hero } from "../components";
-import { useHeroFetch, useKeyboard } from "../hooks";
+import { Button, Calling, Hero, Phone } from "../../components";
+import { useHeroFetch, useKeyboard } from "../../hooks";
 import "./MainPage.css";
 
 function MainPage() {
-  const time = new Date().toTimeString().slice(0, 5);
-
   const [message, setMesssage] = useState("");
   const [input, setInput] = useState("");
   const [code, setCode] = useState("");
@@ -95,29 +93,21 @@ function MainPage() {
     },
   ];
   return (
-    <div className="feature-phone__wrapper">
-      <div className="feature-phone__screen">
-        <div className="feature-phone__background" />
-        <div className="feature-phone__time">{time}</div>
-        <div className="feature-phone__battery" />
-        <div className="feature-phone__display">
-          <div className="feature-phone__message">
+    <Fragment>
+      <Phone
+        message={
+          <Fragment>
             {loading && <Calling />}
             {!loading && <Hero name={message} />}
             {!loading && <div>{message}</div>}
-          </div>
-          <input type="text" readOnly value={input} />
-          <div className="feature-phone__help">
-            <div className="feature-phone__help-left">Send</div>
-            <div className="feature-phone__help-right">Clear</div>
-          </div>
-        </div>
-        <div className="feature-phone__grill" />
-      </div>
-
-      <div className="feature-phone__buttons-wrapper">
-        <div className="feature-phone__buttons">
-          <div className="feature-phone__dummy-buttons">
+          </Fragment>
+        }
+        field={<input type="text" readOnly value={input} />}
+        buttons={bindings.map((binding, index) => (
+          <Button key={index} {...binding} />
+        ))}
+        actionButtons={
+          <Fragment>
             <div>
               <Button
                 onClick={() => onClick({}, "✱")}
@@ -146,24 +136,20 @@ function MainPage() {
                 onClick={() => onClick({}, "clear")}
                 icon={
                   <Icon
-                    style={{ transform: "rotate(135deg)", marginBottom: "4px" }}
+                    style={{
+                      transform: "rotate(135deg)",
+                      marginBottom: "4px",
+                    }}
                     path={mdiPhoneCancel}
                     size={0.7}
                   />
                 }
               />
             </div>
-          </div>
-
-          {bindings.map((binding, index) => (
-            <Button key={index} {...binding} />
-          ))}
-        </div>
-      </div>
-      <div className="feature-phone__mic-wrapper">
-        <div className="feature-phone__mic"></div>
-      </div>
-    </div>
+          </Fragment>
+        }
+      />
+    </Fragment>
   );
 }
 
