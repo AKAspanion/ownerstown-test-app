@@ -28,7 +28,7 @@ export default function useHeroFetch(code) {
         const hero = data.data.heroes[0];
 
         if (hero) {
-          setHero(hero);
+          setHero(hero + " ANSWERED");
         } else {
           setError("No hero found");
         }

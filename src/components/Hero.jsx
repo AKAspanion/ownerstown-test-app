@@ -23,12 +23,18 @@ function Hero({ name }) {
     "CAPTAINAMERICA",
   ].join("-");
 
-  if (!heroes.includes(name.toUpperCase())) {
+  const parsedName = name.toUpperCase().replace("ANSWERED", "").trim();
+
+  if (!heroes.includes(parsedName)) {
     return false;
   }
   return (
     <div className="hero-image">
-      <img alt={name} width="80" src={`images/${name.toLowerCase()}.png`} />
+      <img
+        alt={name}
+        width="80"
+        src={`images/${parsedName.toLowerCase()}.png`}
+      />
     </div>
   );
 }
