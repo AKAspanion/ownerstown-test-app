@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ownerstown-test-app/precache-manifest.610b8d99916de3f7d12ffaccdc9af0ea.js"
+  "/ownerstown-test-app/precache-manifest.937564677d7161b6f486e0e0b1f3ea95.js"
 );
 
 self.addEventListener('message', (event) => {
