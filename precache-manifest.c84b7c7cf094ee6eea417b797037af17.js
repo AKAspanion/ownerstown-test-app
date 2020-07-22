@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f4c9f588ebf9a76f9d6ee1402037a3cd",
+    "revision": "6b722008c555d2ff04af42a8e6a5a15c",
     "url": "/ownerstown-test-app/index.html"
   },
   {
-    "revision": "578fcceeb9fda9a5bac6",
-    "url": "/ownerstown-test-app/static/css/main.6ef64997.chunk.css"
+    "revision": "2cdd9c8de93ccd2e79f8",
+    "url": "/ownerstown-test-app/static/css/main.33330c6d.chunk.css"
   },
   {
     "revision": "b3d68cffec989f19ed32",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ownerstown-test-app/static/js/2.3e142487.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "578fcceeb9fda9a5bac6",
-    "url": "/ownerstown-test-app/static/js/main.7512dbb2.chunk.js"
+    "revision": "2cdd9c8de93ccd2e79f8",
+    "url": "/ownerstown-test-app/static/js/main.fd9d33ce.chunk.js"
   },
   {
     "revision": "8ebce8087a86136125b3",
