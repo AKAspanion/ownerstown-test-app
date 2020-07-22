@@ -15,8 +15,6 @@ export default function useHeroFetch(code) {
       try {
         if (!code)
           throw new Error("Use the secret code to call for a superhero");
-        // for showing animation
-        await fetchTimeout(1000);
 
         const resp = await fetchHero(code);
         const data = await resp.json();
