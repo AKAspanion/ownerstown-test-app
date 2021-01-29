@@ -1,5 +1,5 @@
 # Ownerstown Frontend
-Frontend for Ownerstown interview test app.
+A bar phone created for Ownerstown interview test app.
 
 ## Task
 Create a UI that resembles a numpad, and use it to call API with superhero code.  
