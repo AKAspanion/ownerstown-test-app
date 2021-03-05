@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "aa632ffd0a6e987d686ccf78fdf28545",
+    "revision": "28b0cb79da6fee66767d30fd7a230221",
     "url": "/ownerstown-test-app/index.html"
   },
   {
